@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piano Iran</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:#050505;
+  color:#fff;
+  min-height:100vh;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  width:350px;
+  height:350px;
+  background:#d4af37;
+  filter:blur(150px);
+  opacity:.12;
+  top:-100px;
+  right:-100px;
+  z-index:-1;
+}
+
+.container{
+  width:min(92%,520px);
+  margin:auto;
+  padding:35px 0;
+}
+
+.logo{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:8px;
+}
+
+h1{
+  text-align:center;
+  color:#d4af37;
+  margin:0;
+  font-size:30px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#aaa;
+  margin:10px 0 25px;
+}
+
+.card{
+  background:linear-gradient(145deg,#151515,#090909);
+  border:1px solid #3b321b;
+  border-radius:20px;
+  padding:18px;
+  margin:14px 0;
+  box-shadow:0 8px 25px #000;
+}
+
+.title{
+  color:#d4af37;
+  font-size:19px;
+  margin-bottom:8px;
+}
+
+.id{
+  direction:ltr;
+  text-align:center;
+  font-size:18px;
+  color:#fff;
+  padding:10px;
+  background:#0b0b0b;
+  border-radius:12px;
+  margin:10px 0;
+}
+
+.buttons{
+  display:flex;
+  gap:8px;
+}
+
+button,a{
+  flex:1;
+  border:0;
+  border-radius:12px;
+  padding:12px;
+  font-size:15px;
+  font-weight:bold;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+}
+
+.open{
+  background:#d4af37;
+  color:#080808;
+}
+
+.copy{
+  background:#222;
+  color:#d4af37;
+  border:1px solid #55471e;
+}
+
+.rules{
+  color:#ddd;
+  line-height:2;
+  margin:0;
+  padding-right:20px;
+}
+
+.rules li::marker{
+  color:#d4af37;
+}
+
+.welcome{
+  text-align:center;
+  color:#eee;
+  font-size:18px;
+  margin:18px 0;
+}
+
+.footer{
+  text-align:center;
+  color:#777;
+  margin-top:30px;
+  font-size:13px;
+}
+
+#login{
+  position:fixed;
+  inset:0;
+  background:#050505;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:10;
+}
+
+.loginbox{
+  width:min(100%,400px);
+  background:#111;
+  border:1px solid #5a4b1d;
+  border-radius:22px;
+  padding:28px;
+  text-align:center;
+  box-shadow:0 0 40px #000;
+}
+
+.loginbox h2{
+  color:#d4af37;
+}
+
+input{
+  width:100%;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #444;
+  background:#080808;
+  color:white;
+  outline:none;
+  font-size:16px;
+  text-align:center;
+  margin:12px 0;
+}
+
+.enter{
+  width:100%;
+  background:#d4af37;
+  color:#050505;
+}
+
+.logout{
+  width:100%;
+  margin-top:10px;
+  background:#151515;
+  color:#d4af37;
+  border:1px solid #55471e;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="login">
+  <div class="loginbox">
+    <div class="logo">🎹</div>
+    <h2>Piano Iran</h2>
+    <p>برای ورود نام خود را وارد کنید</p>
+
+    <input id="nameInput" placeholder="نام شما">
+
+    <button class="enter" onclick="login()">
+      ورود به سایت
+    </button>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="logo">🎹</div>
+
+  <h1>Piano Iran</h1>
+
+  <div class="subtitle">
+    مرکز ارتباط و اطلاع‌رسانی
+  </div>
+
+  <div class="welcome" id="welcome"></div>
+
+  <div class="card">
+    <div class="title">💬 گپ چت گروه</div>
+
+    <p>
+      برای ورود به گپ گروه روی دکمه زیر بزنید.
+    </p>
+
+    <a
+      class="open"
+      href="https://rubika.ir/joing/+BBHDGEDJI0TRESQNCUQEZPFXXQICRZAQ"
+      target="_blank">
+      ورود به گروه
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="title">📢 آیدی کانال</div>
+
+    <div class="id">
+      @pianoiran12
+    </div>
+
+    <div class="buttons">
+      <button
+        class="copy"
+        onclick="copyText('@pianoiran12')">
+        📋 کپی
+      </button>
+
+      <a
+        class="open"
+        href="https://rubika.ir/pianoiran12"
+        target="_blank">
+        باز کردن
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="title">👤 آیدی ادمین</div>
+
+    <div class="id">
+      @naznun00la
+    </div>
+
+    <div class="buttons">
+      <button
+        class="copy"
+        onclick="copyText('@naznun00la')">
+        📋 کپی
+      </button>
+
+      <a
+        class="open"
+        href="https://rubika.ir/naznun00la"
+        target="_blank">
+        باز کردن
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="title">🛠️ آیدی پشتیبانی</div>
+
+    <div class="id">
+      @Zndani12j
+    </div>
+
+    <div class="buttons">
+      <button
+        class="copy"
+        onclick="copyText('@Zndani12j')">
+        📋 کپی
+      </button>
+
+      <a
+        class="open"
+        href="https://rubika.ir/Zndani12j"
+        target="_blank">
+        باز کردن
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="title">📞 شماره پشتیبانی</div>
+
+    <div class="id">
+      09921740186
+    </div>
+
+    <a
+      class="open"
+      href="tel:09921740186">
+      تماس با پشتیبانی
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="title">📜 قوانین کانال</div>
+
+    <ul class="rules">
+      <li>کانال فقط برای اطلاع‌رسانی و انتشار مطالب است.</li>
+      <li>اعضا امکان ارسال پیام در کانال را ندارند.</li>
+      <li>تبلیغات و محتوای نامرتبط ممنوع است.</li>
+      <li>برای پیشنهاد یا مشکل با پشتیبانی ارتباط بگیرید.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="title">💬 قوانین گپ گروه</div>
+
+    <ul class="rules">
+      <li>احترام به همه اعضا الزامی است.</li>
+      <li>توهین و ایجاد مزاحمت ممنوع است.</li>
+      <li>تبلیغات بدون هماهنگی ممنوع است.</li>
+      <li>ارسال اسپم و پیام‌های تکراری ممنوع است.</li>
+      <li>مشکلات را به پشتیبانی گزارش کنید.</li>
+    </ul>
+  </div>
+
+  <button class="logout" onclick="logout()">
+    خروج از حساب
+  </button>
+
+  <div class="footer">
+    Piano Iran © 2026<br>
+    ارتباط سریع‌تر، ساده‌تر، حرفه‌ای‌تر ✨
+  </div>
+
+</div>
+
+<script>
+
+function login(){
+
+  const name =
+    document.getElementById("nameInput").value.trim();
+
+  if(!name){
+    alert("لطفاً نام خود را وارد کنید.");
+    return;
+  }
+
+  localStorage.setItem("pianoName",name);
+
+  showSite();
+}
+
+
+function showSite(){
+
+  const name =
+    localStorage.getItem("pianoName");
+
+  if(name){
+
+    document.getElementById("login")
+      .style.display="none";
+
+    document.getElementById("welcome")
+      .innerText="خوش آمدی، "+name+" 🎹";
+  }
+}
+
+
+function logout(){
+
+  localStorage.removeItem("pianoName");
+
+  location.reload();
+}
+
+
+function copyText(text){
+
+  navigator.clipboard.writeText(text)
+    .then(function(){
+
+      alert("آیدی کپی شد ✅");
+
+    })
+    .catch(function(){
+
+      alert("کپی انجام نشد؛ آیدی را دستی کپی کنید.");
+
+    });
+}
+
+
+showSite();
+
+</script>
+
+</body>
+  </html>
